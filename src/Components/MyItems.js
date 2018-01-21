@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import store from '../Store';
 import uuid from 'uuid';
 
 class MyItems extends Component {
   handleChange(id){
     this.props.handleChange(id)
-    
+
   }
   render() {
     let debts;

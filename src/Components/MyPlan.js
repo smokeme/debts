@@ -8,7 +8,7 @@ class MyPlan extends Component {
 
      plans = this.props.plan.map(
       (item) => {
-        return (
+        if (item.opening > 1) return (
         <tr key={item.number}>
           <td>{item.number}</td>
           <td>{item.opening}</td>
@@ -22,9 +22,20 @@ class MyPlan extends Component {
     )
   }
     return (
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <th>Instalment Number</th>
+              <th>Opening Balance</th>
+              <th>Instalment Amount</th>
+              <th>Closing Balance</th>
+              <th>Number of Debts</th>
+            </tr>
+          </thead>
       <tbody >
         {plans}
       </tbody>
+      </table>
     );
   }
 }

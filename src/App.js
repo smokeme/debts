@@ -4,8 +4,6 @@ import MyItems from './Components/MyItems'
 import MyPlan from './Components/MyPlan'
 import MyForm from './Components/MyForm'
 import MyTotal from './Components/MyTotal'
-
-import store from './Store';
 import uuid from 'uuid';
 
 
@@ -150,21 +148,10 @@ getTotals(){
     </div>
     <hr/>
   <MyForm pushDebt={this.pushDebt.bind(this)}/>
+  <h2 className="sub-header">Repayment Details</h2>
+  <div className="table-responsive">
+  <MyPlan plan={this.state.debts}/>
 
-    <h2 className="sub-header">Repayment Details</h2>
-    <div className="table-responsive">
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <th>Instalment Number</th>
-            <th>Opening Balance</th>
-            <th>Instalment Amount</th>
-            <th>Closing Balance</th>
-            <th>Number of Debts</th>
-          </tr>
-        </thead>
-          <MyPlan plan={this.state.debts}/>
-      </table>
       <table className="table table-striped">
         <thead>
           <tr>
