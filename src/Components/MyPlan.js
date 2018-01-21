@@ -2,15 +2,31 @@ import React, { Component } from 'react';
 
 class MyPlan extends Component {
   render() {
+
+    let plans;
+     if(this.props.plan){
+
+     plans = this.props.plan.map(
+      (item) => {
+        return (
+        <tr key={item.number}>
+          <td>{item.number}</td>
+          <td>{item.opening}</td>
+          <td>{item.instalment}</td>
+          <td>{item.closing}</td>
+        <td>{item.numberofDebts}</td>
+        </tr>
+
+      )
+    }
+    )
+  }
     return (
-      <tr>
-        <td>1</td>
-        <td>100</td>
-        <td>50</td>
-        <td>50</td>
-        <td>1</td>
-      </tr>
+      <tbody >
+        {plans}
+      </tbody>
     );
   }
 }
+
 export default MyPlan;
