@@ -46,6 +46,7 @@ class App extends Component {
   createArray(){
     this.setState({debts:[]})
     var array = Array(this.getMaxDuration())
+
     for (var i = 0; i < array.length; i++) {
         array[i] = {
           number: i,
